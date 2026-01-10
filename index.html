@@ -3,18 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Damian Mandagaran — CV</title>
+  <title>CV - Damian Mandagaran</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
   <style>
     :root{
       --bg:#f7fafc;
       --card:#ffffff;
       --muted:#6b7280;
-      --primary:#0ea5e9;
-      --accent:#0b1220;
+      --primary:#0ea5e9; /* Azul cielo */
+      --accent:#0b1220;  /* Azul oscuro casi negro */
       --radius:12px;
       --max-width:1100px;
       --gap:20px;
@@ -28,7 +26,7 @@
       padding:20px;
       max-width:var(--max-width);
       -webkit-font-smoothing:antialiased;
-      line-height:1.45;
+      line-height:1.5;
     }
 
     /* Card / layout */
@@ -40,7 +38,7 @@
     }
     .panel{
       background:var(--card);
-      padding:20px;
+      padding:24px;
       border-radius:var(--radius);
       box-shadow:0 10px 30px rgba(11,18,32,0.06);
       border:1px solid rgba(11,18,32,0.03);
@@ -50,29 +48,33 @@
     .sidebar{
       display:flex;
       flex-direction:column;
-      gap:16px;
+      gap:20px;
     }
     .avatar{
-      width:120px;
-      height:120px;
+      width:130px;
+      height:130px;
       border-radius:50%;
       overflow:hidden;
-      border:3px solid rgba(14,165,233,0.12);
+      border:4px solid rgba(14,165,233,0.12);
       background:linear-gradient(135deg,#e6f7ff,#f0fbff);
-      margin:0 auto 6px;
+      margin:0 auto 10px;
     }
     .avatar img{width:100%;height:100%;object-fit:cover;display:block}
     .name{ text-align:center; margin-top:6px; }
-    h1{margin:6px 0 0;font-weight:700;font-size:1.35rem;text-align:center}
-    .role{margin:4px 0 8px;text-align:center;color:var(--muted);font-weight:600}
+    h1{margin:6px 0 0;font-weight:700;font-size:1.4rem;text-align:center;line-height: 1.2;}
+    .role{margin:8px 0 8px;text-align:center;color:var(--muted);font-weight:600; font-size: 0.95rem;}
 
-    .contact-list{display:grid;gap:8px;font-size:0.95rem;color:var(--muted)}
-    .contact-list a{color:var(--accent);text-decoration:none;font-weight:600}
-    .tag{display:inline-block;background:#f1f5f9;color:var(--muted);padding:6px 10px;border-radius:999px;font-weight:600;font-size:0.85rem;margin-right:6px}
+    .contact-list{display:grid;gap:10px;font-size:0.9rem;color:var(--muted)}
+    .contact-list div { word-break: break-word; }
+    .contact-list a{color:var(--primary);text-decoration:none;font-weight:600;transition:0.2s}
+    .contact-list a:hover{text-decoration:underline;color:var(--accent)}
+    
+    .tag{display:inline-block;background:#f1f5f9;color:var(--accent);padding:6px 12px;border-radius:999px;font-weight:600;font-size:0.8rem;margin: 0 4px 6px 0;}
 
-    .section-title{font-weight:700;margin:6px 0 8px;color:var(--accent);font-size:0.98rem}
+    .section-title{font-weight:700;margin:0 0 12px;color:var(--accent);font-size:1rem; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid #f1f5f9; padding-bottom: 6px;}
+    
     .skill{
-      display:flex;flex-direction:column;gap:6px;margin-bottom:8px;
+      display:flex;flex-direction:column;gap:6px;margin-bottom:12px;
     }
     .skill .bar{
       height:8px;background:#eef2f7;border-radius:999px;overflow:hidden;
@@ -80,136 +82,201 @@
     .skill .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--primary),#06b6d4);border-radius:999px}
 
     /* Right column */
-    .content{display:flex;flex-direction:column;gap:16px}
-    .profile{font-size:0.98rem;color:var(--muted)}
-    .item{margin-bottom:8px}
-    .item h3{margin:0;font-size:1.05rem}
-    .meta{font-size:0.9rem;color:var(--muted);margin-bottom:6px}
-    .list{margin:0;padding:0;list-style:none}
-    .list li{margin-bottom:10px}
-    .button{
-      display:inline-block;padding:8px 12px;border-radius:8px;background:var(--primary);color:white;text-decoration:none;font-weight:700;
-      box-shadow:0 8px 20px rgba(14,165,233,0.12);
-      margin-top:10px;
+    .content{display:flex;flex-direction:column;gap:20px}
+    .profile{font-size:1rem;color:var(--muted); text-align: justify;}
+    
+    .item{margin-bottom:20px; border-bottom: 1px solid #f1f5f9; padding-bottom: 16px;}
+    .item:last-child {border-bottom: none; margin-bottom: 0; padding-bottom: 0;}
+    
+    .item-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        margin-bottom: 4px;
     }
+    .item h3{margin:0;font-size:1.1rem; color: var(--accent);}
+    .item-date { font-size: 0.9rem; color: var(--primary); font-weight: 600; white-space: nowrap;}
+    
+    .meta{font-size:0.95rem;color:var(--muted);margin-bottom:8px; font-weight: 500;}
+    
+    .list{margin:0;padding-left:18px;list-style:disc; color: var(--muted);}
+    .list li{margin-bottom:6px; font-size: 0.95rem;}
+    
+    .button{
+      display:inline-block;padding:10px 20px;border-radius:8px;background:var(--primary);color:white;text-decoration:none;font-weight:700;
+      box-shadow:0 4px 14px rgba(14,165,233,0.3);
+      margin-top:10px;
+      transition: transform 0.2s;
+    }
+    .button:hover { transform: translateY(-2px); }
 
     /* Small screens */
     @media (max-width:900px){
       .wrap{grid-template-columns:1fr;gap:14px}
-      .avatar{width:96px;height:96px}
-      .sidebar{align-items:center}
-      .panel{padding:16px}
+      .avatar{width:100px;height:100px}
+      .sidebar{align-items:center; text-align: center;}
+      .section-title { width: 100%; text-align: center; }
+      .contact-list { text-align: center; justify-content: center;}
+      .skill { width: 100%; }
+      .item-header { flex-direction: column; align-items: flex-start;}
+      .item-date { margin-top: 2px; font-size: 0.85rem;}
     }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <!-- Left / sidebar -->
-    <aside class="panel sidebar" aria-labelledby="perfil-title">
+    <aside class="panel sidebar">
       <div>
-        <div class="avatar" aria-hidden="true">
+        <div class="avatar">
           <img src="https://github.com/DLmandagaran.png" alt="Avatar Damian Mandagaran">
         </div>
         <div class="name">
           <h1>Damian Mandagaran</h1>
-          <div class="role">Desarrollador Full‑Stack</div>
+          <div class="role">Estudiante de Economía & Data Analyst</div>
         </div>
       </div>
 
       <div>
         <div class="section-title">Contacto</div>
         <div class="contact-list">
-          <div><strong>Email:</strong> <a href="mailto:tu.email@ejemplo.com">tu.email@ejemplo.com</a></div>
-          <div><strong>GitHub:</strong> <a href="https://github.com/DLmandagaran" target="_blank" rel="noopener">DLmandagaran</a></div>
-          <div><strong>LinkedIn:</strong> <a href="#" target="_blank" rel="noopener">linkedin.com/in/tu-perfil</a></div>
-          <div><strong>Ubicación:</strong> Buenos Aires, Argentina</div>
+          <div>📧 <a href="mailto:damian522.dm@gmail.com">damian522.dm@gmail.com</a></div>
+          <div>🔗 <a href="https://linkedin.com/in/damian522" target="_blank" rel="noopener">linkedin.com/in/damian522</a></div>
+          <div>💻 <a href="https://github.com/DLmandagaran" target="_blank" rel="noopener">github.com/DLmandagaran</a></div>
+          <div>📱 +54 9 376 509-6998</div>
+          <div>📍 Posadas, Misiones, Arg.</div>
         </div>
       </div>
 
       <div>
-        <div class="section-title">Habilidades</div>
+        <div class="section-title">Habilidades Técnicas</div>
+        
         <div class="skill">
-          <div style="display:flex;justify-content:space-between;font-weight:600"><span>JavaScript / TypeScript</span><span style="color:var(--muted)">90%</span></div>
+          <div style="display:flex;justify-content:space-between;font-weight:600;font-size:0.9rem"><span>Power BI / Excel</span><span style="color:var(--muted)">Avanzado</span></div>
+          <div class="bar"><i style="width:95%"></i></div>
+        </div>
+        
+        <div class="skill">
+          <div style="display:flex;justify-content:space-between;font-weight:600;font-size:0.9rem"><span>Python / R</span><span style="color:var(--muted)">Intermedio</span></div>
+          <div class="bar"><i style="width:80%"></i></div>
+        </div>
+
+        <div class="skill">
+          <div style="display:flex;justify-content:space-between;font-weight:600;font-size:0.9rem"><span>Gestión de Datos</span><span style="color:var(--muted)">Alta</span></div>
           <div class="bar"><i style="width:90%"></i></div>
         </div>
-        <div class="skill">
-          <div style="display:flex;justify-content:space-between;font-weight:600"><span>Node.js / Backend</span><span style="color:var(--muted)">85%</span></div>
-          <div class="bar"><i style="width:85%"></i></div>
-        </div>
-        <div class="skill">
-          <div style="display:flex;justify-content:space-between;font-weight:600"><span>React / Frontend</span><span style="color:var(--muted)">88%</span></div>
-          <div class="bar"><i style="width:88%"></i></div>
-        </div>
-        <div style="margin-top:6px">
-          <span class="tag">Docker</span><span class="tag">SQL</span><span class="tag">CI/CD</span>
+
+        <div style="margin-top:10px">
+          <span class="tag">SQL</span>
+          <span class="tag">Visualización de Datos</span>
+          <span class="tag">Google Sheets</span>
+          <span class="tag">Macros / VBA</span>
+          <span class="tag">Administración</span>
         </div>
       </div>
 
       <div>
         <div class="section-title">Idiomas</div>
-        <div class="contact-list">
-          <div>Español — Nativo</div>
-          <div>Inglés — Intermedio / Avanzado</div>
+        <div class="contact-list" style="gap:6px">
+          <div><strong>Español:</strong> Nativo</div>
+          <div><strong>Inglés:</strong> Intermedio (Lectura Técnica)</div>
         </div>
       </div>
 
-      <div style="text-align:center;margin-top:6px">
-        <a class="button" href="./MandagaranDamian.pdf_2026_1_9.pdf" target="_blank" rel="noopener">Descargar CV (PDF)</a>
+      <div style="text-align:center;margin-top:10px">
+        <a class="button" href="./MandagaranDamian.pdf" download>Descargar PDF</a>
       </div>
     </aside>
 
-    <!-- Right / content -->
     <main class="content">
+      
       <section class="panel">
+        <h2 class="section-title" style="border:none; margin-bottom:8px; font-size:1.2rem; color:var(--primary)">Perfil Profesional</h2>
         <div class="profile">
-          <h2 id="perfil-title" style="margin-top:0">Perfil</h2>
           <p>
-            Soy desarrollador Full‑Stack con experiencia en el desarrollo de aplicaciones web, APIs y automatización de despliegues.
-            Me interesa crear productos robustos y mantenibles, con énfasis en buenas prácticas, testing y entrega continua.
+            Estudiante avanzado de la Licenciatura en Economía, con una sólida formación complementaria en Data Analytics y programación estadística. Poseo una trayectoria profesional comprobable superior a dos años en la gestión integral de bases de datos, administración pública y atención al cliente. 
+          </p>
+          <p style="margin-top:10px">
+            Cuento con una capacidad demostrada para transformar datos brutos en informes estratégicos orientados a la toma de decisiones ejecutivas. Mi objetivo profesional se centra en la aplicación de competencias avanzadas en Python, R y Power BI para la optimización de procesos operativos y la generación de valor añadido en funciones de Análisis de Datos, Finanzas o Inteligencia de Negocios.
           </p>
         </div>
       </section>
 
       <section class="panel">
+        <h2 class="section-title" style="border:none; margin-bottom:16px; font-size:1.2rem; color:var(--primary)">Experiencia Laboral</h2>
+        
         <div class="item">
-          <h3>Experiencia</h3>
-
-          <div class="meta">Desarrollador Full‑Stack — Empresa Ejemplo (2022 — presente)</div>
+          <div class="item-header">
+            <h3>Administrativo de Gestión de Datos y Análisis</h3>
+            <span class="item-date">Feb 2023 — Actualidad</span>
+          </div>
+          <div class="meta">Oficina de Empleo de Posadas — Posadas, Misiones</div>
           <ul class="list">
-            <li>Diseño e implementación de APIs REST con Node.js y TypeScript.</li>
-            <li>Construcción de interfaces con React y optimización de rendimiento.</li>
-            <li>Integración CI/CD y despliegues en entornos en la nube.</li>
+            <li>Dirección y ejecución de la construcción y normalización de bases de datos destinadas al control de programas de empleo y procesos de reclutamiento, logrando una mejora sustancial en la integridad de los activos de información.</li>
+            <li>Diseño e implementación de sistemas de control automatizados mediante planillas, facilitando la carga masiva de datos y mitigando significativamente la incidencia de errores operativos en el equipo.</li>
+            <li>Desarrollo de análisis estadísticos exhaustivos sobre la dinámica de inserción laboral local, proporcionando fundamentos cuantitativos para la toma de decisiones estratégicas.</li>
+            <li>Provisión de soporte técnico especializado y capacitación interna al personal sobre nuevos protocolos de gestión y carga de datos.</li>
           </ul>
+        </div>
 
-          <div class="meta">Desarrollador Frontend — Otra Empresa (2019 — 2022)</div>
+        <div class="item">
+          <div class="item-header">
+            <h3>Administrativo de Despacho (Trabajo de Campo)</h3>
+            <span class="item-date">Ago 2021 — Feb 2023</span>
+          </div>
+          <div class="meta">IPRODHA — Posadas, Misiones</div>
           <ul class="list">
-            <li>Implementación de UIs accesibles y responsive usando React.</li>
-            <li>Colaboración en pipelines de testing y revisión de código.</li>
+            <li>Gestión integral del flujo documental de expedientes y notificaciones oficiales, garantizando la trazabilidad y el cumplimiento normativo.</li>
+            <li>Desarrollo de instrumentos de control y seguimiento sistemático para los casos sociales y habitacionales gestionados por el departamento.</li>
+            <li>Optimización de los canales de atención al público vía telefónica, logrando una reducción en los tiempos de respuesta y una mejora en la calidad del servicio.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="item-header">
+            <h3>Asesor Comercial</h3>
+            <span class="item-date">Jun 2021 — Ago 2021</span>
+          </div>
+          <div class="meta">Autocrédito — Posadas, Misiones</div>
+          <ul class="list">
+            <li>Ejecución de estrategias de comercialización telefónica y asesoramiento financiero especializado en productos de capitalización.</li>
+            <li>Consecución consistente de los objetivos comerciales estipulados y fidelización efectiva de la cartera de clientes.</li>
           </ul>
         </div>
       </section>
 
       <section class="panel">
+        <h2 class="section-title" style="border:none; margin-bottom:16px; font-size:1.2rem; color:var(--primary)">Formación Académica</h2>
+        
         <div class="item">
-          <h3>Educación</h3>
-          <div class="meta">Ingeniería en Sistemas — Universidad Ejemplo (2015 — 2019)</div>
-          <p class="lead" style="margin:6px 0 0;color:var(--muted)">Cursos y certificaciones relevantes: programación avanzada, arquitecturas web, DevOps básico.</p>
+          <div class="item-header">
+            <h3>Licenciatura en Economía</h3>
+            <span class="item-date">En curso</span>
+          </div>
+          <div class="meta">Universidad Nacional de Misiones (UNaM)</div>
+          <p style="margin:4px 0 0;font-size:0.95rem;color:var(--muted)">
+            <strong>Especialización:</strong> Gestión financiera, Estadística avanzada, Econometría y Sistemas Administrativos.
+          </p>
+        </div>
+
+        <div class="item">
+          <div class="item-header">
+            <h3>Bachiller en Humanidades y Ciencias Sociales</h3>
+            <span class="item-date">2013</span>
+          </div>
+          <div class="meta">Instituto Madre de la Misericordia</div>
         </div>
       </section>
 
       <section class="panel">
-        <div class="item">
-          <h3>Proyectos destacados</h3>
-          <ul class="list">
-            <li><strong>Proyecto A:</strong> Plataforma de gestión (React, Node.js). Enlace: <a href="https://github.com/DLmandagaran" target="_blank" rel="noopener">GitHub</a>.</li>
-            <li><strong>Proyecto B:</strong> API de autenticación y autorización con JWT y pruebas automatizadas.</li>
-          </ul>
-        </div>
+        <h2 class="section-title" style="border:none; margin-bottom:16px; font-size:1.2rem; color:var(--primary)">Cursos y Certificaciones</h2>
+        <ul class="list">
+          <li><strong>Curso de Data Analytics (Coderhouse):</strong> Especialización en visualización de datos y gestión de la información.</li>
+          <li><strong>Programación en Lenguaje R (UNaM):</strong> Enfoque en estadística y modelado.</li>
+          <li><strong>Analista del Conocimiento (Trayecto Programador):</strong> Ministerio de Desarrollo Productivo de la Nación.</li>
+        </ul>
       </section>
 
-      <section class="panel" style="text-align:center">
-        <p style="color:var(--muted);margin:0">¿Querés que adapte los colores, la tipografía o el contenido para que quede exactamente como el PDF? Dímelo y lo ajusto.</p>
-      </section>
     </main>
   </div>
 </body>
