@@ -3,113 +3,315 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Damian Mandagaran</title>
+  <title>Damián Mandagarán — CV</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <style>
     :root{
-      --bg:#f7fafc;
+      --bg:#f8fafc; /* Fondo gris muy claro */
       --card:#ffffff;
-      --muted:#6b7280;
-      --primary:#0ea5e9;
-      --accent:#0b1220;
-      --radius:12px;
-      --max-width:1000px;
+      --muted:#64748b;
+      --primary:#2563eb; /* Azul profesional */
+      --accent:#1e293b; /* Texto oscuro */
+      --radius:16px;
+      --max-width:1100px;
+      --gap:24px;
     }
     *{box-sizing:border-box}
     body{
-      font-family:Inter,system-ui,Segoe UI,Arial,Helvetica,sans-serif;
-      background:linear-gradient(180deg,var(--bg),#ffffff);
+      font-family:'Inter',system-ui,-apple-system,sans-serif;
+      background:linear-gradient(180deg, var(--bg) 0%, #eef2ff 100%);
       color:var(--accent);
-      margin:32px auto;
-      padding:20px;
+      margin:0;
+      padding:40px 20px;
+      line-height:1.6;
+    }
+
+    /* Layout Principal */
+    .wrap{
+      display:grid;
+      grid-template-columns: 340px 1fr;
+      gap:var(--gap);
       max-width:var(--max-width);
-      -webkit-font-smoothing:antialiased;
+      margin:0 auto;
+      align-items:start;
     }
-    header{
-      display:flex;
-      gap:20px;
-      align-items:center;
+    
+    .panel{
       background:var(--card);
-      padding:20px;
+      padding:24px;
       border-radius:var(--radius);
-      box-shadow:0 6px 18px rgba(11,18,32,0.06);
+      box-shadow:0 4px 20px rgba(0,0,0,0.05);
+      border:1px solid rgba(255,255,255,0.5);
     }
+
+    /* Sidebar (Columna Izquierda) */
+    .sidebar{
+      display:flex;
+      flex-direction:column;
+      gap:24px;
+      position:sticky;
+      top:20px;
+    }
+    
+    /* Header del Perfil */
+    .profile-header{ text-align:center; }
     .avatar{
-      width:96px;
-      height:96px;
+      width:140px;
+      height:140px;
       border-radius:50%;
       overflow:hidden;
-      flex:0 0 96px;
-      border:3px solid rgba(14,165,233,0.12);
-      background:linear-gradient(135deg,#e6f7ff,#f0fbff);
+      border:4px solid white;
+      box-shadow: 0 8px 16px rgba(37,99,235,0.15);
+      margin:0 auto 16px;
+      background:#e0e7ff;
     }
     .avatar img{width:100%;height:100%;object-fit:cover;display:block}
-    h1{margin:0;font-weight:700}
-    p.lead{margin:6px 0 0;color:var(--muted)}
-    main{margin-top:20px;display:grid;gap:20px}
-    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-    .card{
-      background:var(--card);
-      padding:16px;border-radius:12px;
-      box-shadow:0 6px 14px rgba(11,18,32,0.04);
-      border:1px solid rgba(11,18,32,0.03);
-    }
-    .card h3{margin:0 0 8px 0;font-size:1.05rem}
-    .card p{margin:0;color:var(--muted);font-size:0.95rem}
-    a.button{
-      display:inline-block;margin-top:12px;padding:8px 12px;border-radius:8px;
-      background:var(--primary);color:white;text-decoration:none;font-weight:600;
-      box-shadow:0 6px 12px rgba(14,165,233,0.12);
-    }
-    footer{margin-top:26px;color:var(--muted);font-size:0.9rem;text-align:center}
+    
+    h1{ margin:0; font-weight:700; font-size:1.5rem; letter-spacing:-0.5px; color:#0f172a; }
+    .role{ margin-top:4px; color:var(--primary); font-weight:600; font-size:0.95rem; }
 
-    @media (max-width:600px){
-      header{flex-direction:row;gap:14px}
-      .avatar{width:72px;height:72px;flex:0 0 72px}
+    /* Secciones Sidebar */
+    .section-title{
+      font-weight:700;
+      margin-bottom:12px;
+      color:#0f172a;
+      font-size:1rem;
+      text-transform:uppercase;
+      letter-spacing:0.5px;
+      border-bottom: 2px solid #f1f5f9;
+      padding-bottom: 8px;
+    }
+
+    .contact-list{ display:grid; gap:12px; font-size:0.9rem; }
+    .contact-item{ display:flex; align-items:center; gap:10px; color:var(--muted); }
+    .contact-item i { color:var(--primary); width:20px; text-align:center;}
+    .contact-item a{ color:var(--accent); text-decoration:none; font-weight:500; transition:color 0.2s;}
+    .contact-item a:hover{ color:var(--primary); }
+
+    /* Barras de Habilidad */
+    .skill-container{ margin-bottom:12px; }
+    .skill-info{ display:flex; justify-content:space-between; font-size:0.85rem; font-weight:600; margin-bottom:6px; }
+    .progress-bar{ height:8px; background:#f1f5f9; border-radius:10px; overflow:hidden; }
+    .progress-fill{ height:100%; background:var(--primary); border-radius:10px; display:block; }
+
+    .tag-cloud{ display:flex; flex-wrap:wrap; gap:8px; }
+    .tag{ 
+      background:#eff6ff; color:var(--primary); 
+      padding:6px 12px; border-radius:20px; 
+      font-size:0.8rem; font-weight:600; 
+    }
+
+    /* Botón de descarga */
+    .btn-download{
+      display:block; width:100%;
+      padding:12px; text-align:center;
+      background:var(--primary); color:white;
+      text-decoration:none; border-radius:8px;
+      font-weight:600; transition:transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-download:hover{ transform:translateY(-2px); box-shadow:0 10px 20px rgba(37,99,235,0.2); }
+
+    /* Contenido Principal (Columna Derecha) */
+    .content{ display:flex; flex-direction:column; gap:24px; }
+    
+    .about-text{ color:var(--muted); font-size:1rem; margin:0; text-align:justify;}
+
+    /* Tarjetas de Experiencia/Educación */
+    .timeline-item{
+      position:relative;
+      padding-left:24px;
+      border-left:2px solid #e2e8f0;
+      margin-bottom:24px;
+    }
+    .timeline-item:last-child{ margin-bottom:0; }
+    .timeline-item::before{
+      content:''; position:absolute; left:-7px; top:5px;
+      width:12px; height:12px; border-radius:50%;
+      background:white; border:2px solid var(--primary);
+    }
+    
+    .job-header h3{ margin:0; font-size:1.1rem; color:#0f172a; }
+    .job-meta{ font-size:0.9rem; color:var(--primary); font-weight:600; margin:4px 0 8px; }
+    .job-desc{ margin:0; padding-left:16px; color:var(--muted); font-size:0.95rem; }
+    .job-desc li{ margin-bottom:6px; }
+
+    /* Mobile */
+    @media (max-width:900px){
+      .wrap{ grid-template-columns:1fr; }
+      .sidebar{ position:static; }
+      .avatar{ width:120px; height:120px; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="avatar" aria-hidden="true">
-      <!-- Usa tu avatar de GitHub -->
-      <img src="https://github.com/DLmandagaran.png" alt="Avatar Damian Mandagaran">
-    </div>
-    <div>
-      <h1>Damian Mandagaran</h1>
-      <p class="lead">Hola — Bienvenido a mi página personal. Aquí comparto proyectos y contacto.</p>
-    </div>
-  </header>
 
-  <main>
-    <section class="card">
-      <h2 style="margin-top:0">Sobre mí</h2>
-      <p class="lead" style="margin-bottom:0">Desarrollador — puedes añadir una bio corta aquí: tecnologías, intereses y qué proyectos destacar.</p>
-    </section>
-
-    <section>
-      <h2>Proyectos</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>Mi GitHub</h3>
-          <p>Ver todo mi trabajo público y repositorios.</p>
-          <a class="button" href="https://github.com/DLmandagaran" target="_blank" rel="noopener">Ir a GitHub</a>
-        </article>
-
-        <article class="card">
-          <h3>Proyecto Ejemplo</h3>
-          <p>Describe brevemente un proyecto y enlaza al repo o demo.</p>
-          <a class="button" href="#" target="_blank" rel="noopener">Ver</a>
-        </article>
+  <div class="wrap">
+    
+    <aside class="panel sidebar">
+      <div class="profile-header">
+        <div class="avatar">
+          <img src="https://github.com/DLmandagaran.png" alt="Foto Damián Mandagarán">
+        </div>
+        <h1>Damián Mandagarán</h1>
+        <div class="role">Estudiante de Economía & Data Analyst</div>
       </div>
-    </section>
-  </main>
 
-  <footer>
-    <p>Publicado con GitHub Pages — <a href="https://github.com/DLmandagaran" target="_blank">DLmandagaran</a></p>
-  </footer>
+      <div>
+        <div class="section-title">Contacto</div>
+        <div class="contact-list">
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Posadas, Misiones, AR</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:damian522.dm@gmail.com">damian522.dm@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-linkedin"></i>
+            <a href="https://linkedin.com/in/damian522" target="_blank">/in/damian522</a>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/DLmandagaran" target="_blank">DLmandagaran</a>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-title">Habilidades Técnicas</div>
+        
+        <div class="skill-container">
+          <div class="skill-info"><span>Power BI & Excel (Adv)</span><span>95%</span></div>
+          <div class="progress-bar"><span class="progress-fill" style="width:95%"></span></div>
+        </div>
+        
+        <div class="skill-container">
+          <div class="skill-info"><span>Python (Data Libs)</span><span>85%</span></div>
+          <div class="progress-bar"><span class="progress-fill" style="width:85%"></span></div>
+        </div>
+
+        <div class="skill-container">
+          <div class="skill-info"><span>R (Estadística)</span><span>80%</span></div>
+          <div class="progress-bar"><span class="progress-fill" style="width:80%"></span></div>
+        </div>
+
+        <div class="skill-container">
+          <div class="skill-info"><span>SQL / Bases de Datos</span><span>85%</span></div>
+          <div class="progress-bar"><span class="progress-fill" style="width:85%"></span></div>
+        </div>
+
+        <div style="margin-top:16px;">
+          <div class="section-title" style="border:none; font-size:0.9rem;">Otros conocimientos</div>
+          <div class="tag-cloud">
+            <span class="tag">Google Sheets</span>
+            <span class="tag">Automatización</span>
+            <span class="tag">Macros</span>
+            <span class="tag">Gestión Financiera</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-title">Idiomas</div>
+        <div class="contact-list">
+          <div class="contact-item"><span>Español (Nativo)</span></div>
+          <div class="contact-item"><span>Inglés (Lectura Técnica)</span></div>
+        </div>
+      </div>
+
+      <div>
+        <a class="btn-download" href="./MandagaranDamian.pdf_2026_1_9.pdf" target="_blank">
+          <i class="fas fa-file-pdf" style="margin-right:8px;"></i> Descargar CV
+        </a>
+      </div>
+    </aside>
+
+    <main class="content">
+      
+      <section class="panel">
+        <div class="section-title">Perfil Profesional</div>
+        <p class="about-text">
+          Estudiante avanzado de la Licenciatura en Economía, con una sólida formación complementaria en Data Analytics y programación estadística. Poseo una trayectoria profesional superior a dos años en la gestión integral de bases de datos, administración pública y atención al cliente.
+          <br><br>
+          Cuento con una capacidad demostrada para transformar datos brutos en informes estratégicos orientados a la toma de decisiones ejecutivas. Mi objetivo profesional se centra en la aplicación de competencias avanzadas en Python, R y Power BI para la optimización de procesos operativos y la generación de valor añadido en funciones de Análisis de Datos, Finanzas o Inteligencia de Negocios.
+        </p>
+      </section>
+
+      <section class="panel">
+        <div class="section-title">Experiencia Laboral</div>
+        
+        <div class="timeline-item">
+          <div class="job-header">
+            <h3>Administrativo de Gestión de Datos y Análisis</h3>
+            <div class="job-meta">Oficina de Empleo de Posadas | Feb 2023 - Actualidad</div>
+          </div>
+          <ul class="job-desc">
+            <li>Dirección y ejecución de la construcción y normalización de bases de datos para el control de programas de empleo y reclutamiento.</li>
+            <li>Diseño e implementación de sistemas de control automatizados, facilitando la carga masiva y mitigando errores operativos.</li>
+            <li>Desarrollo de análisis estadísticos sobre la dinámica de inserción laboral local para la toma de decisiones estratégicas.</li>
+            <li>Soporte técnico y capacitación interna sobre nuevos protocolos de gestión de datos.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="job-header">
+            <h3>Administrativo de Despacho</h3>
+            <div class="job-meta">IPRODHA (Instituto Prov. de Desarrollo Habitacional) | Ago 2021 - Feb 2023</div>
+          </div>
+          <ul class="job-desc">
+            <li>Gestión integral del flujo documental de expedientes y notificaciones oficiales, garantizando trazabilidad normativa.</li>
+            <li>Desarrollo de instrumentos de control y seguimiento para casos sociales y habitacionales.</li>
+            <li>Optimización de los canales de atención al público, reduciendo tiempos de respuesta.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="job-header">
+            <h3>Asesor Comercial</h3>
+            <div class="job-meta">Autocrédito | Jun 2021 - Ago 2021</div>
+          </div>
+          <ul class="job-desc">
+            <li>Ejecución de estrategias de comercialización telefónica y asesoramiento financiero en productos de capitalización.</li>
+            <li>Consecución consistente de objetivos comerciales y fidelización de cartera de clientes.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="section-title">Formación Académica</div>
+        
+        <div class="timeline-item">
+          <div class="job-header">
+            <h3>Licenciatura en Economía</h3>
+            <div class="job-meta">Universidad Nacional de Misiones (UNaM) | En curso</div>
+          </div>
+          <p style="font-size:0.95rem; color:var(--muted); margin:0;">
+            Áreas de especialización: Gestión financiera, Estadística avanzada, Econometría y Sistemas Administrativos.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="job-header">
+              <h3>Bachiller en Humanidades y Ciencias Sociales</h3>
+              <div class="job-meta">Instituto Madre de la Misericordia | Graduado 2013</div>
+            </div>
+          </div>
+      </section>
+
+      <section class="panel">
+        <div class="section-title">Cursos y Certificaciones</div>
+        <ul class="job-desc" style="padding-left:18px;">
+          <li><strong>Data Analytics:</strong> Coderhouse (Especialización en visualización de datos y gestión de la información).</li>
+          <li><strong>Programación en Lenguaje R:</strong> Universidad Nacional de Misiones.</li>
+          <li><strong>Analista del Conocimiento:</strong> Ministerio de Desarrollo Productivo de la Nación.</li>
+        </ul>
+      </section>
+
+    </main>
+  </div>
 </body>
 </html>
