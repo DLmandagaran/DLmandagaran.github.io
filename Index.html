@@ -4,35 +4,112 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Damian Mandagaran</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    body{font-family:system-ui,Segoe UI,Arial,Helvetica,sans-serif;max-width:900px;margin:40px auto;padding:0 20px;color:#0b1220}
-    header{display:flex;align-items:center;gap:16px}
-    h1{margin:0}
-    .avatar{width:96px;height:96px;border-radius:50%;background:#ddd;display:inline-block}
-    a{color:#0366d6}
-    footer{margin-top:32px;color:#556}
+    :root{
+      --bg:#f7fafc;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --primary:#0ea5e9;
+      --accent:#0b1220;
+      --radius:12px;
+      --max-width:1000px;
+    }
+    *{box-sizing:border-box}
+    body{
+      font-family:Inter,system-ui,Segoe UI,Arial,Helvetica,sans-serif;
+      background:linear-gradient(180deg,var(--bg),#ffffff);
+      color:var(--accent);
+      margin:32px auto;
+      padding:20px;
+      max-width:var(--max-width);
+      -webkit-font-smoothing:antialiased;
+    }
+    header{
+      display:flex;
+      gap:20px;
+      align-items:center;
+      background:var(--card);
+      padding:20px;
+      border-radius:var(--radius);
+      box-shadow:0 6px 18px rgba(11,18,32,0.06);
+    }
+    .avatar{
+      width:96px;
+      height:96px;
+      border-radius:50%;
+      overflow:hidden;
+      flex:0 0 96px;
+      border:3px solid rgba(14,165,233,0.12);
+      background:linear-gradient(135deg,#e6f7ff,#f0fbff);
+    }
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    h1{margin:0;font-weight:700}
+    p.lead{margin:6px 0 0;color:var(--muted)}
+    main{margin-top:20px;display:grid;gap:20px}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+    .card{
+      background:var(--card);
+      padding:16px;border-radius:12px;
+      box-shadow:0 6px 14px rgba(11,18,32,0.04);
+      border:1px solid rgba(11,18,32,0.03);
+    }
+    .card h3{margin:0 0 8px 0;font-size:1.05rem}
+    .card p{margin:0;color:var(--muted);font-size:0.95rem}
+    a.button{
+      display:inline-block;margin-top:12px;padding:8px 12px;border-radius:8px;
+      background:var(--primary);color:white;text-decoration:none;font-weight:600;
+      box-shadow:0 6px 12px rgba(14,165,233,0.12);
+    }
+    footer{margin-top:26px;color:var(--muted);font-size:0.9rem;text-align:center}
+
+    @media (max-width:600px){
+      header{flex-direction:row;gap:14px}
+      .avatar{width:72px;height:72px;flex:0 0 72px}
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="avatar" aria-hidden="true"></div>
+    <div class="avatar" aria-hidden="true">
+      <!-- Usa tu avatar de GitHub -->
+      <img src="https://github.com/DLmandagaran.png" alt="Avatar Damian Mandagaran">
+    </div>
     <div>
       <h1>Damian Mandagaran</h1>
-      <p>Bienvenido a mi página personal.</p>
+      <p class="lead">Hola — Bienvenido a mi página personal. Aquí comparto proyectos y contacto.</p>
     </div>
   </header>
+
   <main>
-    <p>Esta es una GitHub Page creada para mostrar un sitio personal. Aquí puedes añadir información sobre ti, proyectos, enlaces y un blog si quieres.</p>
+    <section class="card">
+      <h2 style="margin-top:0">Sobre mí</h2>
+      <p class="lead" style="margin-bottom:0">Desarrollador — puedes añadir una bio corta aquí: tecnologías, intereses y qué proyectos destacar.</p>
+    </section>
 
     <section>
       <h2>Proyectos</h2>
-      <ul>
-        <li><a href="https://github.com/DLmandagaran">Mi GitHub</a></li>
-      </ul>
+      <div class="cards">
+        <article class="card">
+          <h3>Mi GitHub</h3>
+          <p>Ver todo mi trabajo público y repositorios.</p>
+          <a class="button" href="https://github.com/DLmandagaran" target="_blank" rel="noopener">Ir a GitHub</a>
+        </article>
+
+        <article class="card">
+          <h3>Proyecto Ejemplo</h3>
+          <p>Describe brevemente un proyecto y enlaza al repo o demo.</p>
+          <a class="button" href="#" target="_blank" rel="noopener">Ver</a>
+        </article>
+      </div>
     </section>
   </main>
+
   <footer>
-    <p>Publicado con GitHub Pages — <a href="https://github.com/DLmandagaran">DLmandagaran</a></p>
+    <p>Publicado con GitHub Pages — <a href="https://github.com/DLmandagaran" target="_blank">DLmandagaran</a></p>
   </footer>
 </body>
 </html>
