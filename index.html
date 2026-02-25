@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Damian Mandagaran</title>
+  <title>Damian Mandagaran - CV</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -11,8 +11,8 @@
       --bg:#f7fafc;
       --card:#ffffff;
       --muted:#6b7280;
-      --primary:#0ea5e9; /* Azul cielo */
-      --accent:#0b1220;  /* Azul oscuro casi negro */
+      --primary:#0ea5e9; 
+      --accent:#0b1220;  
       --radius:12px;
       --max-width:1100px;
       --gap:20px;
@@ -29,7 +29,6 @@
       line-height:1.5;
     }
 
-    /* Card / layout */
     .wrap{
       display:grid;
       grid-template-columns: 320px 1fr;
@@ -44,7 +43,6 @@
       border:1px solid rgba(11,18,32,0.03);
     }
 
-    /* Left column (sidebar) */
     .sidebar{
       display:flex;
       flex-direction:column;
@@ -61,11 +59,10 @@
     }
     .avatar img{width:100%;height:100%;object-fit:cover;display:block}
     .name{ text-align:center; margin-top:6px; }
-    h1{margin:6px 0 0;font-weight:700;font-size:1.4rem;text-align:center;line-height: 1.2;}
+    h1{margin:6px 0 0;font-weight:700;font-size:1.4rem;text-align:center;line-height: 1.2; text-transform: uppercase;}
     .role{margin:8px 0 8px;text-align:center;color:var(--muted);font-weight:600; font-size: 0.95rem;}
 
     .contact-list{display:grid;gap:10px;font-size:0.9rem;color:var(--muted)}
-    .contact-list div { word-break: break-word; }
     .contact-list a{color:var(--primary);text-decoration:none;font-weight:600;transition:0.2s}
     .contact-list a:hover{text-decoration:underline;color:var(--accent)}
     
@@ -73,15 +70,10 @@
 
     .section-title{font-weight:700;margin:0 0 12px;color:var(--accent);font-size:1rem; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid #f1f5f9; padding-bottom: 6px;}
     
-    .skill{
-      display:flex;flex-direction:column;gap:6px;margin-bottom:12px;
-    }
-    .skill .bar{
-      height:8px;background:#eef2f7;border-radius:999px;overflow:hidden;
-    }
+    .skill{display:flex;flex-direction:column;gap:6px;margin-bottom:12px;}
+    .skill .bar{height:8px;background:#eef2f7;border-radius:999px;overflow:hidden;}
     .skill .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--primary),#06b6d4);border-radius:999px}
 
-    /* Right column */
     .content{display:flex;flex-direction:column;gap:20px}
     .profile{font-size:1rem;color:var(--muted); text-align: justify;}
     
@@ -111,16 +103,12 @@
     }
     .button:hover { transform: translateY(-2px); }
 
-    /* Small screens */
     @media (max-width:900px){
       .wrap{grid-template-columns:1fr;gap:14px}
-      .avatar{width:100px;height:100px}
       .sidebar{align-items:center; text-align: center;}
       .section-title { width: 100%; text-align: center; }
       .contact-list { text-align: center; justify-content: center;}
-      .skill { width: 100%; }
       .item-header { flex-direction: column; align-items: flex-start;}
-      .item-date { margin-top: 2px; font-size: 0.85rem;}
     }
   </style>
 </head>
@@ -129,7 +117,7 @@
     <aside class="panel sidebar">
       <div>
         <div class="avatar">
-          <img src="https://github.com/DLmandagaran.png" alt="Avatar Damian Mandagaran">
+          <img src="https://github.com/DLmandagaran.png" alt="Damian Mandagaran">
         </div>
         <div class="name">
           <h1>Damian Mandagaran</h1>
@@ -141,8 +129,8 @@
         <div class="section-title">Contacto</div>
         <div class="contact-list">
           <div>📧 <a href="mailto:damian522.dm@gmail.com">damian522.dm@gmail.com</a></div>
-          <div>🔗 <a href="https://linkedin.com/in/damian522" target="_blank" rel="noopener">linkedin.com/in/damian522</a></div>
-          <div>💻 <a href="https://github.com/DLmandagaran" target="_blank" rel="noopener">github.com/DLmandagaran</a></div>
+          <div>🔗 <a href="https://linkedin.com/in/damian522" target="_blank">linkedin.com/in/damian522</a></div>
+          <div>💻 <a href="https://github.com/DLmandagaran" target="_blank">github.com/DLmandagaran</a></div>
           <div>📱 +54 9 376 509-6998</div>
           <div>📍 Posadas, Misiones, Arg.</div>
         </div>
@@ -152,7 +140,7 @@
         <div class="section-title">Habilidades Técnicas</div>
         
         <div class="skill">
-          <div style="display:flex;justify-content:space-between;font-weight:600;font-size:0.9rem"><span>Power BI / Excel</span><span style="color:var(--muted)">Avanzado</span></div>
+          <div style="display:flex;justify-content:space-between;font-weight:600;font-size:0.9rem"><span>SQL / Power BI</span><span style="color:var(--muted)">Avanzado</span></div>
           <div class="bar"><i style="width:95%"></i></div>
         </div>
         
@@ -161,17 +149,12 @@
           <div class="bar"><i style="width:80%"></i></div>
         </div>
 
-        <div class="skill">
-          <div style="display:flex;justify-content:space-between;font-weight:600;font-size:0.9rem"><span>Gestión de Datos</span><span style="color:var(--muted)">Alta</span></div>
-          <div class="bar"><i style="width:90%"></i></div>
-        </div>
-
         <div style="margin-top:10px">
-          <span class="tag">SQL</span>
-          <span class="tag">Visualización de Datos</span>
-          <span class="tag">Google Sheets</span>
-          <span class="tag">Macros / VBA</span>
-          <span class="tag">Administración</span>
+          <span class="tag">DAX / Modelado</span>
+          <span class="tag">Excel (Macros)</span>
+          <span class="tag">Pandas / NumPy</span>
+          <span class="tag">Power Query</span>
+          <span class="tag">Gestión Pública</span>
         </div>
       </div>
 
@@ -179,12 +162,12 @@
         <div class="section-title">Idiomas</div>
         <div class="contact-list" style="gap:6px">
           <div><strong>Español:</strong> Nativo</div>
-          <div><strong>Inglés:</strong> Intermedio (Lectura Técnica)</div>
+          <div><strong>Inglés:</strong> Intermedio (Lectura técnica)</div>
         </div>
       </div>
 
       <div style="text-align:center;margin-top:10px">
-        <a class="button" href="./MandagaranDamian.pdf" download>Descargar PDF</a>
+        <a class="button" href="#">Descargar PDF</a>
       </div>
     </aside>
 
@@ -194,10 +177,10 @@
         <h2 class="section-title" style="border:none; margin-bottom:8px; font-size:1.2rem; color:var(--primary)">Perfil Profesional</h2>
         <div class="profile">
           <p>
-            Estudiante avanzado de la Licenciatura en Economía, con una sólida formación complementaria en Data Analytics y programación estadística. Poseo una trayectoria profesional comprobable superior a dos años en la gestión integral de bases de datos, administración pública y atención al cliente. 
+            Estudiante avanzado de la Licenciatura en Economía, con una sólida formación complementaria en Data Analytics y programación estadística. Poseo una trayectoria profesional comprobable superior a dos años en la gestión integral de bases de datos, administración pública y atención al cliente. Cuento con una capacidad demostrada para transformar datos brutos en informes estratégicos orientados a la toma de decisiones ejecutivas. 
           </p>
           <p style="margin-top:10px">
-            Cuento con una capacidad demostrada para transformar datos brutos en informes estratégicos orientados a la toma de decisiones ejecutivas. Mi objetivo profesional se centra en la aplicación de competencias avanzadas en Python, R y Power BI para la optimización de procesos operativos y la generación de valor añadido en funciones de Análisis de Datos, Finanzas o Inteligencia de Negocios.
+            Mi objetivo profesional se centra en la aplicación de competencias avanzadas en <strong>Python, R, SQL y Power BI</strong> para la optimización de procesos operativos y la generación de valor añadido en funciones de Análisis de Datos, Finanzas o Inteligencia de Negocios.
           </p>
         </div>
       </section>
@@ -212,23 +195,23 @@
           </div>
           <div class="meta">Oficina de Empleo de Posadas — Posadas, Misiones</div>
           <ul class="list">
-            <li>Dirección y ejecución de la construcción y normalización de bases de datos destinadas al control de programas de empleo y procesos de reclutamiento, logrando una mejora sustancial en la integridad de los activos de información.</li>
-            <li>Diseño e implementación de sistemas de control automatizados mediante planillas, facilitando la carga masiva de datos y mitigando significativamente la incidencia de errores operativos en el equipo.</li>
-            <li>Desarrollo de análisis estadísticos exhaustivos sobre la dinámica de inserción laboral local, proporcionando fundamentos cuantitativos para la toma de decisiones estratégicas.</li>
-            <li>Provisión de soporte técnico especializado y capacitación interna al personal sobre nuevos protocolos de gestión y carga de datos.</li>
+            <li>Dirección y ejecución de la normalización de bases de datos para programas de empleo, logrando una mejora sustancial en la integridad de la información.</li>
+            <li>Diseño de sistemas de control automatizados mediante planillas, facilitando la carga masiva de datos y mitigando la incidencia de errores operativos.</li>
+            <li>Desarrollo de análisis estadísticos sobre la dinámica de inserción laboral local para fundamentar la toma de decisiones estratégicas.</li>
+            <li>Capacitación interna al personal sobre nuevos protocolos de gestión de datos.</li>
           </ul>
         </div>
 
         <div class="item">
           <div class="item-header">
-            <h3>Administrativo de Despacho (Trabajo de Campo)</h3>
+            <h3>Administrativo de Despacho</h3>
             <span class="item-date">Ago 2021 — Feb 2023</span>
           </div>
-          <div class="meta">IPRODHA — Posadas, Misiones</div>
+          <div class="meta">IPRODHA (Instituto Provincial de Desarrollo Habitacional)</div>
           <ul class="list">
-            <li>Gestión integral del flujo documental de expedientes y notificaciones oficiales, garantizando la trazabilidad y el cumplimiento normativo.</li>
-            <li>Desarrollo de instrumentos de control y seguimiento sistemático para los casos sociales y habitacionales gestionados por el departamento.</li>
-            <li>Optimización de los canales de atención al público vía telefónica, logrando una reducción en los tiempos de respuesta y una mejora en la calidad del servicio.</li>
+            <li>Gestión integral del flujo documental (ingresos y egresos), garantizando la trazabilidad y el cumplimiento normativo.</li>
+            <li>Desarrollo de instrumentos de control y seguimiento sistemático para casos sociales y habitacionales.</li>
+            <li>Optimización de los canales de atención al público, reduciendo tiempos de respuesta y mejorando la calidad del servicio.</li>
           </ul>
         </div>
 
@@ -239,42 +222,45 @@
           </div>
           <div class="meta">Autocrédito — Posadas, Misiones</div>
           <ul class="list">
-            <li>Ejecución de estrategias de comercialización telefónica y asesoramiento financiero especializado en productos de capitalización.</li>
-            <li>Consecución consistente de los objetivos comerciales estipulados y fidelización efectiva de la cartera de clientes.</li>
+            <li>Estrategias de comercialización telefónica y asesoramiento financiero en productos de capitalización.</li>
+            <li>Cumplimiento de objetivos comerciales y fidelización de cartera de clientes.</li>
           </ul>
         </div>
       </section>
 
       <section class="panel">
         <h2 class="section-title" style="border:none; margin-bottom:16px; font-size:1.2rem; color:var(--primary)">Formación Académica</h2>
-        
         <div class="item">
           <div class="item-header">
             <h3>Licenciatura en Economía</h3>
             <span class="item-date">En curso</span>
           </div>
           <div class="meta">Universidad Nacional de Misiones (UNaM)</div>
-          <p style="margin:4px 0 0;font-size:0.95rem;color:var(--muted)">
-            <strong>Especialización:</strong> Gestión financiera, Estadística avanzada, Econometría y Sistemas Administrativos.
+          <p class="meta" style="color:var(--muted); font-weight:normal">
+            Áreas clave: Gestión financiera, Estadística avanzada, Econometría y Sistemas Administrativos.
           </p>
-        </div>
-
-        <div class="item">
-          <div class="item-header">
-            <h3>Bachiller en Humanidades y Ciencias Sociales</h3>
-            <span class="item-date">2013</span>
-          </div>
-          <div class="meta">Instituto Madre de la Misericordia</div>
         </div>
       </section>
 
       <section class="panel">
         <h2 class="section-title" style="border:none; margin-bottom:16px; font-size:1.2rem; color:var(--primary)">Cursos y Certificaciones</h2>
-        <ul class="list">
-          <li><strong>Curso de Data Analytics (Coderhouse):</strong> Especialización en visualización de datos y gestión de la información.</li>
-          <li><strong>Programación en Lenguaje R (UNaM):</strong> Enfoque en estadística y modelado.</li>
-          <li><strong>Analista del Conocimiento (Trayecto Programador):</strong> Ministerio de Desarrollo Productivo de la Nación.</li>
-        </ul>
+        <div class="item">
+          <div class="item-header">
+            <h3>Carrera de Data Scientist</h3>
+            <span class="item-date">En curso</span>
+          </div>
+          <div class="meta">Coderhouse</div>
+          <ul class="list">
+            <li>Formación integral en Big Data y Machine Learning.</li>
+            <li>Certificaciones incluidas: Data Analytics, Data Science I, II y III.</li>
+          </ul>
+        </div>
+        <div class="item" style="margin-top:10px">
+          <ul class="list">
+            <li><strong>Programación en Lenguaje R:</strong> Universidad Nacional de Misiones.</li>
+            <li><strong>Analista del Conocimiento:</strong> Ministerio de Desarrollo Productivo de la Nación.</li>
+          </ul>
+        </div>
       </section>
 
     </main>
